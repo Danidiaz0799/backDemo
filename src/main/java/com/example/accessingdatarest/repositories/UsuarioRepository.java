@@ -12,5 +12,5 @@ import com.example.accessingdatarest.entities.Usuario;
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
 @CrossOrigin(origins = "*")
 public interface UsuarioRepository extends PagingAndSortingRepository<Usuario, Long> {
-  List<Usuario> findByLastNameLike(@Param("name") String name);
+  List<Usuario> findByFirstNameContainsOrLastNameContains(@Param("firstName") String firstName, @Param("lastName") String lastName);
 }
